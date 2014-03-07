@@ -1,0 +1,13 @@
+date_format:
+  big_endian: 
+    year: 0
+    month: 1
+    day: 2
+  little_endian: 
+    day: 0
+    month: 1
+    year: 2
+  middle_endian: 
+    month: 0
+    day: 1
+    year: 2
