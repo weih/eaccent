@@ -50,9 +50,9 @@ module Eaccent
     end
 
     def valid_date?
-      ( @year.to_s.size == 4 || @year.to_s.size == 2 ) &&
-      ( @month.to_i >= 1 && @month.to_i <= 12 ) &&
-      ( @day.to_i >= 1 && @day.to_i <= 31 )
+      (@year.to_s.size == 4 || @year.to_s.size == 2) &&
+      (@month.to_i >= 1 && @month.to_i <= 12) &&
+      (@day.to_i >= 1 && @day.to_i <= 31)
     end
   end
 end
