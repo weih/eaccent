@@ -3,6 +3,7 @@
 require 'date'
 require 'yaml'
 require 'rspec/autorun'
+require 'pry'
 
 module Eaccent
   CONFIG_FILE = YAML.load_file('./config.yml')
@@ -46,13 +47,14 @@ module Eaccent
     end
 
     def check_date
-      raise BadDateError unless valid_date?
+      raise BadDateError if invalid_date?
     end
 
-    def valid_date?
-      (@year.to_s.size == 4 || @year.to_s.size == 2) &&
-      (@month.to_i >= 1 && @month.to_i <= 12) &&
-      (@day.to_i >= 1 && @day.to_i <= 31)
+    def invalid_date?
+      # binding.pry
+      (@year.to_s.size != 4 && @year.to_s.size != 2) ||
+      (@month.to_i < 1 || @month.to_i > 12) ||
+      (@day.to_i < 1 || @day.to_i > 31)
     end
   end
 end
